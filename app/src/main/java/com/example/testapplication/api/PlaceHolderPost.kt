@@ -5,4 +5,6 @@ data class PlaceHolderPost(
     val id: Int,
     val title: String,
     val body: String
-)
+){
+     var comments: List<PlaceHolderComment> = listOf()
+}

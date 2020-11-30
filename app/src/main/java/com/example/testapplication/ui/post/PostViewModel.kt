@@ -13,7 +13,7 @@ class PostViewModel @Inject constructor(private val repository: PostUseCase): Vi
     private val disposable = CompositeDisposable()
 
     fun getPosts(id: Int){
-        disposable.add(repository.getPosts(id)
+        disposable.add(repository.getPostsFromPlaceHolderApi(id)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { listOfPosts -> posts.value = listOfPosts },

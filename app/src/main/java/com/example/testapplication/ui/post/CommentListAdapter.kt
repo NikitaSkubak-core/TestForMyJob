@@ -3,11 +3,11 @@ package com.example.testapplication.ui.post
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.testapplication.api.PlaceHolderComment
+import com.example.testapplication.dataBase.Comment
 import com.example.testapplication.databinding.ItemCommentBinding
 
 class CommentListAdapter: RecyclerView.Adapter<CommentListAdapter.CommentViewHolder>() {
-    var listOfComments: List<PlaceHolderComment> = listOf()
+    var listOfComments: List<Comment> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
             CommentViewHolder.from(parent)
@@ -18,7 +18,7 @@ class CommentListAdapter: RecyclerView.Adapter<CommentListAdapter.CommentViewHol
 
     override fun getItemCount() = listOfComments.size
 
-    fun setPosts(comments: List<PlaceHolderComment>){
+    fun setPosts(comments: List<Comment>){
         listOfComments = comments
         notifyDataSetChanged()
     }
@@ -26,7 +26,7 @@ class CommentListAdapter: RecyclerView.Adapter<CommentListAdapter.CommentViewHol
     class CommentViewHolder private constructor(var binding: ItemCommentBinding) :
             RecyclerView.ViewHolder(binding.root) {
 
-        fun bindComment(comment: PlaceHolderComment) {
+        fun bindComment(comment: Comment) {
             binding.comment = comment
         }
 
